@@ -7,7 +7,10 @@ class BirdsController < ApplicationController
 
  def show
   b = Bird.find(params[:id])
-  render json: b
+  if b
+   render json: b
+  else
+   render json: { error: "Bird not found" }, status: :not_found
  end
 
 end
