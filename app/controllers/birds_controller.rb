@@ -11,6 +11,7 @@ class BirdsController < ApplicationController
    render json: b
   else
    render json: { error: "Bird not found" }, status: :not_found
+  end
  end
 
 end
